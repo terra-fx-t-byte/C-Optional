@@ -31,9 +31,11 @@
     }\
     static inline TYPE NAME##_take(NAME* opt) {\
         TYPE value = opt->data.some;    \
+        for (unsigned long i = 0; i < sizeof(opt->data.some); i++) {\
+            ((unsigned char*)&opt->data.some)[i] = 0; /*zeroing data memory*/\
+        }\
         opt->tag = NAME##_None; \
         return value;   \
     }\
-
 
 #endif
