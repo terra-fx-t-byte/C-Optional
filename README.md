@@ -74,7 +74,7 @@ When you type ``` DEFINE_OPTION(NAME, TYPE) ``` the macro generates the followin
 |  ```NAME##_is_some(NAME* opt)```      | Returns ```1``` if the value exists, ```0``` otherwise.|
 |   ```NAME##_unwrap(NAME* opt)```   |    Extracts the contained value **without checking!**. Unsafe if ```None```!   |
 | ```NAME##_unwrap_or(NAME* opt, TYPE* default_value)``` |   Returns the contained data or default value if empty.   |
-|  ```NAME##_take(NAME* opt)``` | Takes the value out of the option type, leaving it as ```None``` |
+|  ```NAME##_take(NAME* opt)``` | Takes the value out of the option type, leaving it as ```None```, also zeroing the contained memory of Option type. |
 
 > ⚠️**Caution:**```unwrap()``` **does not** check the option tag. Always use ```is_some()``` at first, or use ```unwrap_or()``` or ```take()``` when appropriate. Also be be cautios when working with allocated memory and ```take()``` function as it is zeroing the contained memory after being taken.
 
