@@ -31,6 +31,7 @@ All operations are implemented as `static inline` functions, so there is **no ru
 ## ✨ Features
 
 - **Header‑only** – just `#include "Optional.h"` and you’re ready.
+- **No dependecies** - Macro doesn't need extra dependencies.
 - **Works with any type** – primitives, structs, pointers, etc.
 - **Safe by design** – functions like `is_some` let you check the state before unwrapping.
 - **Zero overhead** – all functions are `static inline`, producing code as efficient as manual checks.
